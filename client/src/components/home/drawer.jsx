@@ -37,21 +37,21 @@ function DrawerContent() {
             Home
           </Link>
           <Link 
-            href="" 
+            to="" 
             className="text-white hover:text-indigo-200 font-medium text-lg py-2 "
             onClick={close}
           >
             About
           </Link>
           <Link 
-            href="/login" 
+            to="/login" 
             className="text-white hover:text-indigo-200 font-medium text-lg py-2"
             onClick={close}
           >
             Login
           </Link>
           <Link 
-            href="/register" 
+            to="/register" 
             className="text-white hover:text-indigo-200 font-medium text-lg py-2 "
             onClick={close}
           >

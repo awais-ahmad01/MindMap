@@ -9,7 +9,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import GoogleLoginButton from "../components/utils/googleLoginButton";
 
 const Login = () => {
-   const dispatch = useDispatch();
+  const dispatch = useDispatch();
   const navigate = useNavigate(); 
 
   const { isAuthenticated } = useSelector((state) => state.auth);
@@ -19,7 +19,6 @@ const Login = () => {
       navigate("/dashboardPanel");
     }
   }, [isAuthenticated, navigate]);
-
 
   const schema = yup.object({
     email: yup.string().email("Invalid email").required("Email is required"),
@@ -44,16 +43,16 @@ const Login = () => {
   const onSubmit = (data) => {
     console.log(data);
     dispatch(signinUser(data))
-  .unwrap()
-  .then(() => {
-    console.log("Login successful");
-    navigate("/dashboardPanel"); 
-  })
+      .unwrap()
+      .then(() => {
+        console.log("Login successful");
+        navigate("/dashboardPanel"); 
+      });
   };
 
   return (
-    <div className="flex items-center justify-center h-screen bg-gray-100">
-      <div className="bg-white p-8 rounded-lg shadow-md w-full max-w-md">
+    <div className="flex items-center justify-center min-h-screen bg-gray-100 px-4 sm:px-6 lg:px-8">
+      <div className="bg-white p-6 sm:p-8 rounded-lg shadow-md w-full max-w-md">
         <h2 className="text-2xl font-bold mb-6 text-center">Login</h2>
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="mb-4">
@@ -71,10 +70,7 @@ const Login = () => {
             )}
           </div>
           <div className="mb-4">
-            <label
-              className="block text-sm font-medium mb-2"
-              htmlFor="password"
-            >
+            <label className="block text-sm font-medium mb-2" htmlFor="password">
               Password
             </label>
             <input
@@ -95,8 +91,8 @@ const Login = () => {
           </button>
         </form>
 
-        <div>
-          <GoogleLoginButton label='Sign in with Google'/>
+        <div className="mt-4">
+          <GoogleLoginButton label='Sign in with Google' />
         </div>
       </div>
     </div>

@@ -8,7 +8,7 @@ import Footer from "../components/home/footer";
 
 const Home = () => {
   return (
-    <div>
+    <div className="bg-gray-50">
       <NavBar />
 
       <HeroSection />

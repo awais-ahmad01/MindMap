@@ -43,7 +43,7 @@ function DashboardDrawer() {
         <div className="flex flex-col space-y-6 p-4">
          
           <Link 
-            to='dashboard'
+            to='/dashboardPanel'
             className="text-white hover:text-indigo-200 font-medium text-lg py-2"
             onClick={close}
           >
@@ -63,15 +63,17 @@ function DashboardDrawer() {
           >
             Profile
           </Link>
-           <li>
-              <button 
-                 className="text-white hover:text-indigo-200 font-medium"
+         
+          <div className="text-white hover:text-indigo-200 font-medium text-lg">
+            <button 
+                 
               onClick={signOutUser}>
                 Logout
               </button>
+          </div>
                 
               
-            </li>
+            
         </div>
       </Drawer>
 

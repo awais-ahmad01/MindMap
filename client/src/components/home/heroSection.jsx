@@ -4,7 +4,7 @@ import { Button } from "@mantine/core";
 
 const HeroSection = () => {
   return (
-    <div className="mt-20 flex flex-col sm:flex-row items-center justify-between px-10">
+    <div className="mt-20 flex flex-col sm:flex-row items-center justify-between px-10 bg-gray-50">
         <div className="">
            <div className="flex flex-col lg:px-28 space-y-3">
              <h1 className="text-indigo-600 font-bold text-5xl">Your Private Space</h1>

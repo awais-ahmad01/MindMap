@@ -51,11 +51,13 @@ const NavBar = () => {
               </Link>
             </li>
             <li>
-              <button 
-                 className="text-white hover:text-indigo-200 font-medium"
+              <div  className="text-white hover:text-indigo-200 font-medium">
+                <button 
+                
               onClick={signOutUser}>
                 Logout
               </button>
+              </div>
                 
               
             </li>

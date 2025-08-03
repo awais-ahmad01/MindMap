@@ -14,19 +14,37 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { getDashboardData } from "../store/actions/journal";
 
+import { Loader } from "@mantine/core";
+
 const Dashboard = () => {
   const dispatch = useDispatch();
 
   const { dashboardData, isloading } = useSelector((state) => state.journal);
 
+  console.log('loadinnnggg:', isloading)
+
   const {user} = useSelector(state => state.auth);
 
   console.log("dashboardData:", dashboardData);
 
-  useEffect(() => {
-    const userId = user?._id;
+useEffect(() => {
+  const userId = user?._id;
+  if (userId) {
     dispatch(getDashboardData(userId));
-  }, [dispatch]);
+  }
+}, [dispatch, user]);
+
+
+
+
+  // if(isloading){
+  //   return (
+  //     <div className="h-screen flex justify-center items-center">
+  //       <Loader/>
+  //     </div>
+  //   )
+  // }
+
 
   return (
     <div>
