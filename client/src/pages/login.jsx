@@ -6,6 +6,8 @@ import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 
+import GoogleLoginButton from "../components/utils/googleLoginButton";
+
 const Login = () => {
    const dispatch = useDispatch();
   const navigate = useNavigate(); 
@@ -92,6 +94,10 @@ const Login = () => {
             Login
           </button>
         </form>
+
+        <div>
+          <GoogleLoginButton label='Sign in with Google'/>
+        </div>
       </div>
     </div>
   );

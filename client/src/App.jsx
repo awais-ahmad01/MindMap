@@ -29,8 +29,9 @@ import { Loader } from '@mantine/core'
 
 import AllJournalEntries from './pages/allJournalEntries'
 
-import VerifyEmail from './pages/verifyEmail'
+import VerifyEmail from './pages/verifyEmail';
 
+import GoogleSuccess from './pages/googleSuccess'
 
 
 function App() {
@@ -71,6 +72,9 @@ function App() {
             <Route path="/register" element={<Register />} />
 
             <Route path='/verify-email' element={<VerifyEmail/>} />
+
+            <Route path="/google-success" element={<GoogleSuccess />} />
+
 
 
            <Route element={<PrivateRoute/>}>

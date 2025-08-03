@@ -2,6 +2,10 @@ const app = require('express')();
 
 const dotenv = require('dotenv');
 dotenv.config();
+const session = require('express-session');
+const passport = require('passport');
+require('./config/passport');
+
 
 
 const bodyParser = require('body-parser');
@@ -26,23 +30,19 @@ app.use(cors({
 }));
 app.use(bodyParser.json());
 
+
+app.use(session({
+  secret: process.env.SESSION_SECRET,
+  resave: false,
+  saveUninitialized: true
+}));
+app.use(passport.initialize());
+app.use(passport.session());
+
+
 app.use(authRoute)
 
 app.use(journalRoute);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 app.listen(3000, () => {
