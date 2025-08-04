@@ -14,7 +14,7 @@ const transporter = nodemailer.createTransport({
 });
 
 const sendVerificationEmail = async (email, token) => {
-  const verificationLink = `http://localhost:5173/verify-email?token=${token}&email=${email}`;
+  const verificationLink = `https://mind-map-puce-mu.vercel.app/verify-email?token=${token}&email=${email}`;
 
   await transporter.sendMail({
     from: '"Mindmap" <enter67803@gmail.com>',
