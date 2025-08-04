@@ -1,13 +1,15 @@
 import {createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
+const baseURL = import.meta.env.VITE_API_BASE_URL;
+
 export const registerUser = createAsyncThunk(
   'auth/registerUser',
   async(formData)=>{
     try{
 
         console.log('form:', formData)
-        const response = await axios.post('http://localhost:3000/register', formData)
+        const response = await axios.post(`${baseURL}/register`, formData)
 
         console.log('response:', response)
 
@@ -29,7 +31,7 @@ export const signinUser = createAsyncThunk(
 
            
 
-            const response = await axios.post('http://localhost:3000/login', formData)
+            const response = await axios.post(`${baseURL}/login`, formData)
 
             console.log('response:', response)
 
@@ -66,7 +68,7 @@ export const verifyToken = createAsyncThunk(
             }
 
 
-             const response = await axios.get('http://localhost:3000/verifyToken',
+             const response = await axios.get(`${baseURL}/verifyToken`,
                 {
                     headers:{
                         Authorization: `Bearer ${token}`,

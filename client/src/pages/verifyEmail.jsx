@@ -3,6 +3,8 @@ import { useSearchParams, Link } from 'react-router-dom';
 import axios from 'axios';
 import { Loader } from '@mantine/core';
 
+const baseURL = import.meta.env.VITE_API_BASE_URL;
+
 const VerifyEmail = () => {
 
     const [searchParams] = useSearchParams();
@@ -18,7 +20,7 @@ const email = searchParams.get("email");
     if (token) {
         setLoading(true);
       axios
-        .get(`http://localhost:3000/verifyEmail?token=${token}`)
+        .get(`${baseURL}/verifyEmail?token=${token}`)
         .then(() => {
              setLoading(false);
           setMessage("✅ Your email has been verified successfully!");
@@ -42,7 +44,7 @@ const email = searchParams.get("email");
 
 
   const handleResend = () => {
-  axios.post('http://localhost:3000/resendVerification', { email })
+  axios.post(`${baseURL}/resendVerification`, { email })
     .then(res => {
       alert("Verification email resent!");
     })

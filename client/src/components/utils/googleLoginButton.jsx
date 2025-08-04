@@ -1,9 +1,11 @@
 // components/utils/GoogleLoginButton.jsx
 import { FcGoogle } from 'react-icons/fc';
 
+const baseURL = import.meta.env.VITE_API_BASE_URL;
+
 const GoogleLoginButton = ({ label = "Continue with Google" }) => {
   const handleSuccess = () => {
-    window.location.href = 'http://localhost:3000/auth/google';
+    window.location.href = `${baseURL}/auth/google`;
   };
 
   return (

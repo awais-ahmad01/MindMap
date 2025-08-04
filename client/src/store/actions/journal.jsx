@@ -2,6 +2,8 @@ import { createAsyncThunk } from "@reduxjs/toolkit";
 
 import axios from "axios";
 
+const baseURL = import.meta.env.VITE_API_BASE_URL;
+
 export const createJournal = createAsyncThunk(
     "journal/createJournal",
     async ({data, userId}) => {
@@ -15,7 +17,7 @@ export const createJournal = createAsyncThunk(
 
             console.log("body:", body);
 
-            const response = await axios.post("http://localhost:3000/createJournal", body);
+            const response = await axios.post(`${baseURL}/createJournal`, body);
 
             console.log("response:", response);
 
@@ -35,7 +37,7 @@ export const getDashboardData = createAsyncThunk(
         try{
             console.log("userID:", userId);
 
-        const response = await axios.get(`http://localhost:3000/getDashboardData/${userId}`);
+        const response = await axios.get(`${baseURL}/getDashboardData/${userId}`);
 
         console.log('response:', response);
 
@@ -57,7 +59,7 @@ export const getAllJournals = createAsyncThunk(
         try{
             console.log("userID:", userId);
 
-        const response = await axios.get(`http://localhost:3000/getAllJournals/${userId}`);
+        const response = await axios.get(`${baseURL}/getAllJournals/${userId}`);
 
         console.log('response:', response);
 
