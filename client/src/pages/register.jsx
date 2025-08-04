@@ -11,7 +11,7 @@ const Register = () => {
   const dispatch = useDispatch();
   const [registered, setRegistered] = useState(false);
 
-  
+
   const schema = yup.object({
     username: yup.string().required('Username is required'),
     email: yup.string().email('Invalid email').required('Email is required'),
@@ -86,16 +86,13 @@ const Register = () => {
           <GoogleLoginButton label="Register with Google" />
         </div>
 
-        {registered && (
-          <div className="mt-6 text-center">
-            <p className="text-green-600 font-medium mb-2">
-              Please check your email and verify your account to continue.
-            </p>
-            <Link to="/login" className="text-blue-600 hover:underline">
-              Go to Login
-            </Link>
-          </div>
-        )}
+        <p className="text-center text-sm mt-4">
+          Already have an account?{" "}
+          <Link to="/login" className="text-blue-600 hover:underline">
+            Login
+          </Link>
+        </p>
+        
       </div>
     </div>
   );
