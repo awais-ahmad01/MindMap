@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { signinUser } from "../store/actions/auth";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
@@ -41,7 +41,6 @@ const Login = () => {
   });
 
   const onSubmit = (data) => {
-    console.log(data);
     dispatch(signinUser(data))
       .unwrap()
       .then(() => {
@@ -92,8 +91,16 @@ const Login = () => {
         </form>
 
         <div className="mt-4">
-          <GoogleLoginButton label='Sign in with Google' />
+          <GoogleLoginButton label="Sign in with Google" />
         </div>
+
+        {/* 🔗 Register Link */}
+        <p className="text-center text-sm mt-4">
+          Don&apos;t have an account?{" "}
+          <Link to="/register" className="text-blue-600 hover:underline">
+            Register
+          </Link>
+        </p>
       </div>
     </div>
   );

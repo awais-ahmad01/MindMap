@@ -4,10 +4,14 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import { useDispatch } from 'react-redux';
 import { registerUser } from '../store/actions/auth';
 import GoogleLoginButton from '../components/utils/googleLoginButton';
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const Register = () => {
   const dispatch = useDispatch();
+  const [registered, setRegistered] = useState(false);
 
+  
   const schema = yup.object({
     username: yup.string().required('Username is required'),
     email: yup.string().email('Invalid email').required('Email is required'),
@@ -24,16 +28,14 @@ const Register = () => {
   });
 
   const onSubmit = (data) => {
-    console.log(data);  
     dispatch(registerUser(data))
       .unwrap()
       .then(() => {
-        console.log('Registration successful');
-        // Optionally redirect or show a success message
+        window.alert('Registration successful! Please verify your email before logging in.');
+        setRegistered(true);
       })
-      .catch((error) => { 
+      .catch((error) => {
         console.error('Registration failed:', error);
-        // Optionally show an error message
       });
   };
 
@@ -83,6 +85,17 @@ const Register = () => {
         <div className="mt-4">
           <GoogleLoginButton label="Register with Google" />
         </div>
+
+        {registered && (
+          <div className="mt-6 text-center">
+            <p className="text-green-600 font-medium mb-2">
+              Please check your email and verify your account to continue.
+            </p>
+            <Link to="/login" className="text-blue-600 hover:underline">
+              Go to Login
+            </Link>
+          </div>
+        )}
       </div>
     </div>
   );
