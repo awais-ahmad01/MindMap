@@ -21,7 +21,8 @@ const HeroSection = () => {
 
         <div className="px-2 sm:px-4 md:px-10 lg:px-20 mt-8">
           <Link to='/login'>
-            <button className="bg-indigo-600 text-white px-4 py-2 rounded-lg font-bold hover:bg-indigo-700 transition">
+            <button className="bg-indigo-600 text-white px-4 py-2 
+            rounded-lg font-bold hover:bg-indigo-700 transition cursor-pointer">
             Get Started
           </button>
           </Link>

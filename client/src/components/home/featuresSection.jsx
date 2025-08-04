@@ -1,11 +1,13 @@
 // FeaturesSection.jsx
 import { FaPenFancy, FaLock, FaCalendarAlt, FaChartLine } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const features = [
   {
     title: "Write Daily Journals",
     icon: <FaPenFancy className="text-indigo-600 text-3xl" />,
     description: "Capture your thoughts and emotions in a secure, private journal.",
+    link: '/login'
   },
   // {
   //   title: "Privacy First",
@@ -16,11 +18,13 @@ const features = [
     title: "Track Your Journey",
     icon: <FaCalendarAlt className="text-indigo-600 text-3xl" />,
     description: "Reflect on past entries and visualize your emotional growth.",
+     link: '/login'
   },
   {
     title: "Insightful Stats",
     icon: <FaChartLine className="text-indigo-600 text-3xl" />,
     description: "Analyze writing patterns and moods over time.",
+     link: '/login'
   },
 ];
 
@@ -44,9 +48,11 @@ const FeaturesSection = () => {
               <p className="text-gray-600 text-sm">
                 {feature.description}
               </p>
-              <button className="mt-auto px-4 py-2 cursor-pointer bg-indigo-600 text-white rounded-md hover:bg-indigo-700 transition">
+              <Link to={feature?.link}>
+                <button className="mt-auto px-4 py-2 cursor-pointer bg-indigo-600 text-white rounded-md hover:bg-indigo-700 transition">
                 Try It Out
               </button>
+              </Link>
             </div>
           ))}
         </div>
