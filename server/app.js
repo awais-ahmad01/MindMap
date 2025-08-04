@@ -25,7 +25,8 @@ mongoose.connect(process.env.MONGO_URI)
 });
 
 app.use(cors({
-    origin: 'http://localhost:5173',
+    // origin: 'http://localhost:5173',
+    origin: 'https://mind-map-puce-mu.vercel.app/',
     methods: 'GET,POST', 
 }));
 app.use(bodyParser.json());

@@ -35,7 +35,7 @@ router.get('/auth/google/callback', passport.authenticate('google', {
   });
 
   // Redirect to frontend with token
-  res.redirect(`http://localhost:5173/google-success?token=${token}`);
+  res.redirect(`https://mind-map-puce-mu.vercel.app/google-success?token=${token}`);
 });
 
 module.exports = router;
