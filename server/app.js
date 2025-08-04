@@ -16,7 +16,7 @@ const journalRoute = require('./routes/journal-routes');
 
 
 
-mongoose.connect('mongodb+srv://aahmad19376:bb9kod5mHy0vABrr@cluster0.e5ghlsg.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0')
+mongoose.connect(process.env.MONGO_URI)
 .then(() => {
     console.log('Connected to MongoDB');
 })
@@ -45,6 +45,6 @@ app.use(authRoute)
 app.use(journalRoute);
 
 
-app.listen(3000, () => {
-    console.log('Server is running on port 3000');
+app.listen(process.env.PORT || 3001, () => {
+    console.log('Server is running on port ', process.env.PORT);
 });
