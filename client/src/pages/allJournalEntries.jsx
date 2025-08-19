@@ -104,7 +104,7 @@ const AllJournalEntries = () => {
 
   return (
     <motion.div 
-      className="px-4 sm:px-6 py-16 max-w-6xl mx-auto min-h-screen "
+      className="px-4 sm:px-6 pt-40 pb-16 max-w-6xl mx-auto min-h-screen "
       initial="hidden"
       animate="visible"
       variants={containerVariants}

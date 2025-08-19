@@ -83,7 +83,7 @@ const NewJournal = () => {
 
   return (
     <motion.div 
-      className="flex flex-col items-center min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 px-4 sm:px-6 lg:px-8 py-10 space-y-12"
+      className="flex flex-col items-center min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 px-4 sm:px-6 lg:px-8 pt-40 pb-16 space-y-12"
       initial="hidden"
       animate="visible"
       variants={containerVariants}
