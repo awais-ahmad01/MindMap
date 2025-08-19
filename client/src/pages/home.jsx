@@ -11,11 +11,13 @@ const Home = () => {
     <div className="bg-gray-50">
       <NavBar />
 
-      <HeroSection />
+      <main className="pt-20">
+        <HeroSection />
 
       <FeaturesSection />
 
       <QuotesSection />
+      </main>
 
       <Footer />
     </div>

@@ -14,27 +14,23 @@ router.post('/resendVerification', resendVerificationEmail)
 
 
 
-
-// Trigger Google Login
 router.get('/auth/google', passport.authenticate('google', {
   scope: ['profile', 'email'],
-  prompt: 'select_account'  // 👈 forces Google to ask for account
+  prompt: 'select_account' 
 }));
 
 
-// Google Callback
 router.get('/auth/google/callback', passport.authenticate('google', {
   failureRedirect: '/login',
   session: false
 }), (req, res) => {
 
     console.log('userrrr:::', req.user)
-  // Generate JWT token
+ 
   const token = jwt.sign({ userId: req.user._id }, process.env.JWT_SECRET, {
     expiresIn: '1h'
   });
 
-  // Redirect to frontend with token
   res.redirect(`https://mind-map-puce-mu.vercel.app/google-success?token=${token}`);
 });
 

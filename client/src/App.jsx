@@ -86,8 +86,7 @@ function App() {
            </Route>
 
            
-            
-            <Route path="/dashboardPage" element={<DashboardPage />} />
+      
 
            
           </Routes>

@@ -37,18 +37,9 @@ useEffect(() => {
 
 
 
-  // if(isloading){
-  //   return (
-  //     <div className="h-screen flex justify-center items-center">
-  //       <Loader/>
-  //     </div>
-  //   )
-  // }
-
-
   return (
     <div>
-      <main className="py-16 px-6 max-w-5xl mx-auto space-y-10 min-h-screen">
+      <main className="pt-40 pb-16  px-6 max-w-5xl mx-auto space-y-10 min-h-screen">
         <WelcomeSection />
 
         {dashboardData?.moodSummary && (
