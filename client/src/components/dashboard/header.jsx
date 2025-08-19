@@ -100,22 +100,24 @@ const NavBar = () => {
       />
 
       <div className="flex items-center justify-between relative z-10">
-        <motion.h1
-          className="text-2xl font-bold bg-gradient-to-r from-white to-indigo-100 bg-clip-text text-transparent cursor-pointer flex items-center gap-2"
-          variants={logoVariants}
-          initial="rest"
-          whileHover="hover"
-        >
-          <motion.span
-            animate={{
-              rotate: [0, 10, -10, 0]
-            }}
-            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-          >
-            🧠
-          </motion.span>
-          MindMap
-        </motion.h1>
+       <motion.h1
+  className="text-3xl font-bold cursor-pointer flex items-center gap-2"
+  variants={logoVariants}
+  initial="rest"
+  whileHover="hover"
+>
+  <motion.span
+    animate={{ rotate: [0, 10, -10, 0] }}
+    transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+    className="text-3xl"  
+  >
+    🧠
+  </motion.span>
+  <span className="bg-gradient-to-r from-white to-indigo-100 bg-clip-text text-transparent">
+    MindMap
+  </span>
+</motion.h1>
+
 
         <motion.div 
           className="lg:block hidden"

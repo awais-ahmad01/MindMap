@@ -32,6 +32,7 @@ useEffect(() => {
 
   window.scrollTo({ top: 0, behavior: "smooth" });
 }, [dispatch, user?._id]);
+
   const handleViewDetails = (entry) => {
     setSelectedEntry(entry);
     open();

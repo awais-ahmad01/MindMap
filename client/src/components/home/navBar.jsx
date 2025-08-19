@@ -48,7 +48,7 @@ const NavBar = () => {
 
   return (
     <motion.nav
-      className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-r from-indigo-600 via-purple-600 to-indigo-700 py-6 px-10 shadow-lg backdrop-blur-lg border-b border-indigo-400/20 overflow-hidden"
+      className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-r from-indigo-600 via-purple-600 to-indigo-700 py-6 px-6 lg:px-10 shadow-lg backdrop-blur-lg border-b border-indigo-400/20 overflow-hidden"
       variants={containerVariants}
       initial="hidden"
       animate="visible"
@@ -74,22 +74,24 @@ const NavBar = () => {
       />
 
       <div className="flex items-center justify-between relative z-10">
-        <motion.h1
-          className="text-3xl font-bold bg-gradient-to-r from-white to-indigo-100 bg-clip-text text-transparent cursor-pointer flex items-center gap-2"
-          variants={logoVariants}
-          initial="rest"
-          whileHover="hover"
-        >
-          <motion.span
-            animate={{
-              rotate: [0, 10, -10, 0]
-            }}
-            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-          >
-            🧠
-          </motion.span>
-          MindMap
-        </motion.h1>
+      <motion.h1
+  className="text-3xl font-bold cursor-pointer flex items-center gap-2"
+  variants={logoVariants}
+  initial="rest"
+  whileHover="hover"
+>
+  <motion.span
+    animate={{ rotate: [0, 10, -10, 0] }}
+    transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+    className="text-3xl"  // normal text color applies here
+  >
+    🧠
+  </motion.span>
+  <span className="bg-gradient-to-r from-white to-indigo-100 bg-clip-text text-transparent">
+    MindMap
+  </span>
+</motion.h1>
+
 
         <motion.div 
           className="lg:block hidden"
