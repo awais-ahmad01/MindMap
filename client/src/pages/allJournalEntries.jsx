@@ -25,11 +25,13 @@ const AllJournalEntries = () => {
   console.log('user:', user);
   console.log("journals:", journals);
   
-  useEffect(() => {
-    const userId = user?._id;
-    dispatch(getAllJournals(userId));
-  }, [dispatch]);
-  
+useEffect(() => {
+  const userId = user?._id;
+  dispatch(getAllJournals(userId));
+
+
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}, [dispatch, user?._id]);
   const handleViewDetails = (entry) => {
     setSelectedEntry(entry);
     open();
@@ -104,7 +106,7 @@ const AllJournalEntries = () => {
 
   return (
     <motion.div 
-      className="px-4 sm:px-6 pt-40 pb-16 max-w-6xl mx-auto min-h-screen "
+      className="px-4 sm:px-6 pt-40 pb-16 max-w-6xl mx-auto min-h-screen"
       initial="hidden"
       animate="visible"
       variants={containerVariants}
