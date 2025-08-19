@@ -63,7 +63,7 @@ const WelcomeSection = () => {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.7, delay: 0.4 }}
             >
-              Welcome back, {user?.username}!
+              Welcome, {user?.username}!
             </motion.h2>
           </motion.div>
           <motion.p 
