@@ -74,7 +74,7 @@ const NavBar = () => {
 
   return (
     <motion.nav
-      className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-r from-indigo-600 via-purple-600 to-indigo-700 py-8 px-10 shadow-lg backdrop-blur-lg border-b border-indigo-400/20 overflow-hidden"
+      className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-r from-indigo-600 via-purple-600 to-indigo-700 py-6 px-6 lg:px-10 shadow-lg backdrop-blur-lg border-b border-indigo-400/20 overflow-hidden"
       variants={containerVariants}
       initial="hidden"
       animate="visible"
