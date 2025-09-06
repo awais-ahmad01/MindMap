@@ -31,7 +31,7 @@ router.get('/auth/google/callback', passport.authenticate('google', {
     expiresIn: '1h'
   });
 
-  res.redirect(`https://mind-map-puce-mu.vercel.app/google-success?token=${token}`);
+  res.redirect(`https://mind-map-git-main-awais-ahmad01s-projects.vercel.app/google-success?token=${token}`);
 });
 
 module.exports = router;
